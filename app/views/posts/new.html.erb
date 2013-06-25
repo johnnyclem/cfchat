@@ -1,5 +1,5 @@
-<h2><%= t(:new, :default => 'New') %> <%= t(:post, :default => "post") %></h2>
+<h1>New post</h1>
 
 <%= render 'form' %>
 
-<%= link_to t(:back, :default => "Back"), posts_path, :class => "btn" %>
+<%= link_to 'Back', posts_path %>

@@ -1,36 +1,29 @@
-
-<%= form_for(@post, :html => { :class => "form-horizontal" }) do |f| %>
+<%= form_for(@post) do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
       <ul>
-        <% @post.errors.full_messages.each do |msg| %><li><%= msg %></li><% end %>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
       </ul>
     </div>
   <% end %>
-      <div class="control-group">
-      <%= f.label :name, t(:name, :default => "name").capitalize, :class => "control-label" %>
-      <div class="controls">
-        <%= f.text_field :name %>
-      </div>
-    </div>
-    <div class="control-group">
-      <%= f.label :title, t(:title, :default => "title").capitalize, :class => "control-label" %>
-      <div class="controls">
-        <%= f.text_field :title %>
-      </div>
-    </div>
-    <div class="control-group">
-      <%= f.label :content, t(:content, :default => "content").capitalize, :class => "control-label" %>
-      <div class="controls">
-        <%= f.text_area :content, :rows => 5 %>
-      </div>
-    </div>
-<!-- Beautiful_scaffold - AddField - Do not remove -->
-  <div class="form-actions">
-    <%= f.submit :class => "btn btn-primary" %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
   </div>
 <% end %>
-
-
