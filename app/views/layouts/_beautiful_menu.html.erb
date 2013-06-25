@@ -1,0 +1,4 @@
+<!-- Beautiful Scaffold Menu Do Not Touch This -->
+      <li class="<%= "active" if params[:controller] == "posts" %>">
+        <%= link_to t(:posts, :default => "posts").capitalize, posts_path %>
+      </li>

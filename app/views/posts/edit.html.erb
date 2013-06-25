@@ -1,6 +1,5 @@
-<h1>Editing post</h1>
+<h2><%= t(:editing, :default => 'Editing') %> <%= t(:post, :default => "post") %></h2>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @post %> |
-<%= link_to 'Back', posts_path %>
+<%= link_to t(:back, :default => "Back"), posts_path, :class => "btn" %>

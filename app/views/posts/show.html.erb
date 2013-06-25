@@ -1,20 +1,20 @@
-<p id="notice"><%= notice %></p>
+<h2><%= t(:show, :default => "Show") %> <%= t(:post, :default => "post") %></h2>
 
-<p>
-  <b>Name:</b>
-  <%= @post.name %>
-</p>
+  <p>
+    <b><%= t(:name, :default => "Name") %>:</b>
+      <%= @post.name %>
+  </p>
+  <p>
+    <b><%= t(:title, :default => "Title") %>:</b>
+      <%= @post.title %>
+  </p>
+  <p>
+    <b><%= t(:content, :default => "Content") %>:</b>
+      <%= @post.content %>
+  </p>
 
-<p>
-  <b>Title:</b>
-  <%= @post.title %>
-</p>
+<!-- Beautiful_scaffold - AddField - Field - Do not remove -->
 
-<p>
-  <b>Content:</b>
-  <%= @post.content %>
-</p>
+<%= link_to t(:edit, :default => "Edit"), edit_post_path(@post), :class => "btn" %>
+<%= link_to t(:back, :default => "Back"), posts_path, :class => "btn" %>
 
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
